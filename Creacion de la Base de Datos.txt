@@ -1,0 +1,21 @@
+--CREACION DE LA BASE DE DATOS bd_cuenta
+CREATE DATABASE bd_cuenta;
+--USO DE LA BASE DE DATOS
+USE bd_cuenta;
+--CREACIÓN DE LAS TABLAS 
+CREATE TABLE grupo(
+id INT AUTO_INCREMENT,
+descripcion VARCHAR(50),
+PRIMARY KEY(id)
+);
+--#########################
+CREATE TABLE plancuenta(
+id INT AUTO_INCREMENT,
+codigo CHAR(8),
+grupo INT,
+descripcion VARCHAR(50),
+naturaleza CHAR(1),
+estado BOOLEAN,
+FOREIGN KEY(grupo) REFERENCES grupo(id),
+PRIMARY KEY(id)
+);
